@@ -1,0 +1,9 @@
+<div class="row">	
+	<div class="col-md-4"> 
+		<h1>Posts</h1>
+		{{#each p in model}}
+		</br>{{#link-to 'posts.edit' p.id}} {{p.title}}{{/link-to}}
+		{{/each}}
+	</div>
+		{{outlet}}
+</div>

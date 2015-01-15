@@ -1,3 +1,21 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+                <div class="navbar-header" href="#">
+                        <a class="navbar-brand" href="#">Blog</a>
+                </div>
+                <ul class="nav navbar-nav">
+                        <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+			{{#if auth.authed}}
+                        <li>{{#link-to 'posts.new'}}Add New Post{{/link-to}}</li>
+			{{/if}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        {{#unless auth.authed}}
+                        <li><a href="#" {{action 'login' on='click'}}>Login</a></li>
+                        {{else}}
+                        <li><a href="#" {{action 'logout' on='click'}}>Logout</a></li>
+                        {{/unless}}
+                </ul>
+        </div>
+</nav>
 {{outlet}}

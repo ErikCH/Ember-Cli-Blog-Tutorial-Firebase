@@ -1,0 +1,28 @@
+{{#if isEditing }}
+<div class="col-md-4">
+	<h2>Edit Post</h2>
+
+	<form {{action 'save' on="submit"}}>
+	<dl>
+	<dt>Title:</br> {{textarea value=model.title cols="40" rows="1"}}</dt>
+	<dt>Description:</br> {{textarea value=model.description cols="40" rows="6"}}</dt>
+	</dl>
+	<div class="row">
+		<button type="submit" class="btn btn-primary">Done</button>
+		</form>
+
+		<button type="delete" class="btn btn-primary" {{action 'del' on='click'}}>Destroy</button>
+	</div>
+</div>
+{{/if}}
+<div class="col-md-4">
+	<h1>{{model.title}}</h1>
+	<h3>{{showdown-addon model.description}}</h3>
+	<h5>-{{model.author}}</h5>
+	<h5>{{format-date model.date}}</h5>
+	<form {{action 'edit' on="click"}}>
+	{{#if auth.authed}}
+	<button type="submit" class="bt btn-primary">Edit</button>
+	{{/if}}
+	</form>
+</div>

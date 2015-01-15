@@ -16,5 +16,7 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
-
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/moment/min/moment.min.js');
+app.import('bower_components/firebase-simple-login/firebase-simple-login.js');
 module.exports = app.toTree();

@@ -1,0 +1,12 @@
+<div class="col-md-4">
+	<h1>New Post</h1>
+
+	<form {{action 'save' on="submit"}}>
+
+	<dl>
+	<dt>Title:</br> {{textarea value=title cols="80" rows="1"}}</dt>
+	<dt>Description:</br> {{textarea value=description cols="80" rows="6"}}</dt>
+	</dl>
+	<button type="submit" class="btn btn-primary">Add</button>
+	</form>
+<div class="col-md-4">
