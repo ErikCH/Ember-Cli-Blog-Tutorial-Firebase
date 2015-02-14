@@ -19,11 +19,6 @@ var auth = Ember.Object.extend({
     }.bind(this));
   },
 
-  login: function() {
-    this.authClient.login('twitter');
-	this.set('authed',true);
-  },
-
   logout: function() {
     this.authClient.logout();
 	this.set('authed', false);
